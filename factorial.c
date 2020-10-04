@@ -1,19 +1,13 @@
+// C program to find factorial of given number
 #include <stdio.h>
+// function to find factorial of given number
+unsigned int factorial(unsigned int n) {
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
 int main() {
-    int n, i;
-    unsigned long long fact = 1;
-    printf("Enter an integer: ");
-    scanf("%d", &n);
-
-    // shows error if the user enters a negative integer
-    if (n < 0)
-        printf("Error! Factorial of a negative number doesn't exist.");
-    else {
-        for (i = 1; i <= n; ++i) {
-            fact *= i;
-        }
-        printf("Factorial of %d = %llu", n, fact);
-    }
-
+    int num = 5;
+    printf("Factorial of %d is %d", num, factorial(num));
     return 0;
 }
